@@ -1,0 +1,15 @@
+//merge sort algorithm
+
+start
+MERGESORT(arr, left , right ){
+if left <= right
+return 
+}
+
+mid = (left+ right)/2
+MERGESORT (arr,left, mid) // left half
+MERGESORT(arr,mid+1, right) // right half
+merge(arr,left,mid, right )// merge two halves
+
+
+ 

@@ -1,0 +1,24 @@
+QuickSort(arr, beg, end)
+    if beg < end
+        loc = Partition(arr, beg, end)
+        QuickSort(arr, beg, loc - 1)
+        QuickSort(arr, loc + 1, end)
+
+Partition(arr, beg, end)
+    set left = beg, right = end, loc = beg
+    while true
+        while arr[loc] < arr[right] and loc != right
+            right = right - 1
+        if loc == right
+            return loc
+        else
+            interchange arr[loc] and arr[right]
+            loc = right
+
+        while arr[loc] > arr[left] and loc != left
+            left = left + 1
+        if loc == left
+            return loc
+        else
+            interchange arr[loc] and arr[left]
+            loc = left

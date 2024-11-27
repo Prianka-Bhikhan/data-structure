@@ -1,0 +1,45 @@
+//quicksort
+
+//arr is array,beg and end represents the starting and ndling index of array 
+ quicksort(arr, beg, end, loc ){
+
+    begin 
+     set left = beg , right = end , loc = beg 
+     set done = false 
+      while (not done ) 
+       do 
+        while (a[loc]< a[right]) and (loc != right ) do 
+            set right = right-1
+        endwhile
+        if(loc = right )then
+         set done = true 
+        else
+         interchange a[loc] and a[right]
+         set loc = right 
+        endif
+        if(not done) thne 
+         while (a[loc]>a[left]) and (loc != left) 
+         do 
+           set left = left+1
+         endwhile 
+          if(loc = left) then 
+           set done = true 
+          else 
+           interchange a[loc] and a[left]
+            set loc = left 
+          endif
+        endif
+    endwhile
+end
+
+         
+
+
+
+
+      
+
+     
+
+    
+ }
