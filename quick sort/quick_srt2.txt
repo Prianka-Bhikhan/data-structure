@@ -1,3 +1,4 @@
+//arr is array represents the start,beg and ending and starting index of array 
 QuickSort(arr, beg, end)
     if beg < end
         loc = Partition(arr, beg, end)

@@ -1,6 +1,6 @@
 //quicksort
 
-//arr is array,beg and end represents the starting and ndling index of array 
+//arr is array represents the start,beg and ending and ing index of array 
  quicksort(arr, beg, end, loc ){
 
     begin 

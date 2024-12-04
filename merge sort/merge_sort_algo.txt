@@ -1,15 +1,48 @@
-//merge sort algorithm
+ function MERGESORT(arr, left, right):
+    if left >= right:  // Base case: subarray is already sorted (or empty)
+        return
 
-start
-MERGESORT(arr, left , right ){
-if left <= right
-return 
-}
+    mid = (left + right) / 2  // Find the midpoint of the array
+    MERGESORT(arr, left, mid)  // Recursively sort the left half
+    MERGESORT(arr, mid + 1, right)  // Recursively sort the right half
+    MERGE(arr, left, mid, right)  // Merge the two sorted halves
 
-mid = (left+ right)/2
-MERGESORT (arr,left, mid) // left half
-MERGESORT(arr,mid+1, right) // right half
-merge(arr,left,mid, right )// merge two halves
+function MERGE(arr, left, mid, right):
+    n1 = mid - left + 1  // Size of the left subarray
+    n2 = right - mid     // Size of the right subarray
 
+    // Create temporary arrays for the two halves
+    L = []  // Left subarray
+    R = []  // Right subarray
 
- 
+    // Copy data to temporary arrays
+    for i = 0 to n1 - 1:
+        L.append(arr[left + i])
+    for j = 0 to n2 - 1:
+        R.append(arr[mid + 1 + j])
+
+    i = 0  // Initial index of the left subarray
+    j = 0  // Initial index of the right subarray
+    k = left  // Initial index of the merged array
+
+    // Merge the temporary arrays back into the original array
+    while i < n1 and j < n2:
+        if L[i] <= R[j]:
+            arr[k] = L[i]
+            i = i + 1
+        else:
+            arr[k] = R[j]
+            j = j + 1
+        k = k + 1
+
+    // Copy any remaining elements from the left subarray
+    while i < n1:
+        arr[k] = L[i]
+        i = i + 1
+        k = k + 1
+
+    // Copy any remaining elements from the right subarray
+    while j < n2:
+        arr[k] = R[j]
+        j = j + 1
+        k = k + 1
