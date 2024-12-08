@@ -1,33 +1,6 @@
- MERGE_SORT(arr, left, right)
-1. If left < right
-    a. mid ← (left + right) / 2
-    b. MERGE_SORT(arr, left, mid)        // Recursively sort the left half
-    c. MERGE_SORT(arr, mid + 1, right)  // Recursively sort the right half
-    d. MERGE(arr, left, mid, right)     // Merge the sorted halves
-
-MERGE(arr, left, mid, right)
-1. n1 ← mid - left + 1          // Size of left subarray
-2. n2 ← right - mid             // Size of right subarray
-3. Create temp arrays L[1..n1] and R[1..n2]
-4. Copy data to temp arrays:
-    a. For i = 1 to n1: L[i] ← arr[left + i - 1]
-    b. For j = 1 to n2: R[j] ← arr[mid + j]
-5. Initialize i ← 1, j ← 1, k ← left
-6. While i ≤ n1 and j ≤ n2:
-    a. If L[i] ≤ R[j]:
-           arr[k] ← L[i]
-           i ← i + 1
-       Else:
-           arr[k] ← R[j]
-           j ← j + 1
-       k ← k + 1
-7. Copy any remaining elements of L:
-    a. While i ≤ n1:
-           arr[k] ← L[i]
-           i ← i + 1
-           k ← k + 1
-8. Copy any remaining elements of R:
-    a. While j ≤ n2:
-           arr[k] ← R[j]
-           j ← j + 1
-           k ← k + 1
+ def linear_search (arr, target)
+ for i =0to n-1:
+ if (arr[i]== target)
+ return i
+ else 
+ retunr -1
